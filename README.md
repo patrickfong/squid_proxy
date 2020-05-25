@@ -282,8 +282,8 @@ to generate generate a server cert by hand:
 
 ```
 openssl genrsa -out server.key 2048
-openssl req -config openssl.cnf -days 400 -out server.csr -key server.key -new -sha256  -extensions v3_req  -subj "/C=US/ST=California/L=Mountain View/O=Google/OU=Enterprise/CN=squid.yourdomain.com"
-openssl ca -config openssl.cnf -days 400 -notext  -in server.csr   -out server.crt
+openssl req -config openssl.cnf -days 400 -out server.csr -key server.key -new -sha256 -extensions v3_req  -subj "/C=US/ST=California/L=Mountain View/O=Google/OU=Enterprise/CN=squid.yourdomain.com"
+openssl ca -config openssl.cnf -days 400 -notext -in server.csr -out server.crt
 ```
 
 > note the -extension v3_req i used and look for that in ```openssl.cnf```
